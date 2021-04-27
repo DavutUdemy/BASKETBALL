@@ -1,6 +1,7 @@
 package com.example.restart.Player;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table
@@ -17,12 +18,16 @@ public class Player {
 
     )
     private Long Id;
+    @NotEmpty(message = "Name can not be empty")
     private String name;
+    @NotEmpty(message = "LastName can not be empty")
     private String lastName;
+    @NotEmpty(message = "Position can not be empty")
     private String position;
 
     public Player() {
     }
+
 
     public Player(Long id, String name, String lastName, String position) {
         Id = id;
