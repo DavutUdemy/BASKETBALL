@@ -3,6 +3,7 @@ package com.example.restart;
   import com.example.restart.Player.PlayerRepository;
  import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+  import javax.validation.Valid;
 
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class PlayerController {
 
 
     @PostMapping
-    public void registerNewShoe(@RequestBody Player player){
+    public void registerNewShoe(@Valid @RequestBody Player player){
         playerService.createPlayer(player);
 
     }
